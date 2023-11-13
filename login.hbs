@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    {{> nave}}
+
+
+  <form class="login" action="/auth/login" method="post">
+                 <h1>login</h1>
+     {{#if msg}}
+      <p class="msg">{{msg}}</p>
+      {{/if}}
+
+    <input type="email" name="Email" id="Email" placeholder="Email" >
+    
+    <input type="password"  name="Password" id="Password" placeholder="Password" >
+
+    <button>Submit</button>
+    <p class="for">Forget password </p>
+    <p class="for">Want <a href="/register">register</a></p>
+  </form>
+    
+</body>
+</html>

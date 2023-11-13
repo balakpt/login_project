@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    {{> nave}}
+
+
+
+  <form class="register" action="/auth/register" method="post">
+    <h1>register</h1>
+      {{#if msg}}
+      <p class="msg">{{msg}}</p>
+      {{/if}}
+
+    <input type="text" name="Name" id="Name" placeholder="Name" required>
+    <input type="email" name="Email" id="Email" placeholder="Email" required>
+    
+    <input type="password"  name="Password" id="Password" placeholder="Password" required>
+    <input type="password"  name="Conform_Password" id="Conform_Password" placeholder="Conform_Password" required>
+
+    <button>Submit</button>
+    <p class="for">I have a account</p>
+      <p class="for">Want <a href="/">login</a></p>
+  </form>
+    
+</body>
+</html>
