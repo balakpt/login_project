@@ -7,8 +7,148 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    {{> nave}}
-    <p class="home"> This is Home page</p>
+{{> nave}}
+
+
+<div class="match">
+    <div class="t1">
+    <img class="pro_img" src="css/img/shahrukh-khan-house.jpg" alt="">
+
+    <ul>
+        <li>team        : <span id="team1_name"> IND</span>  </li>
+        <li>ratio       : <span id="team1_ratio"> 8</span></li>
+    </ul>
+    <form action="/auth/bet" method="post">
+    <div class="btnbet">
+       <label for="betting1"></label> <input name="betam" type="number" id="betting1">
+        <button class="bet" id="bet1"  type="submit" onclick="add()"> BET </button>
+    </div>
+    </form>
+    </div>
+    <div class="center">V/S</div>
+    <div class="t2">
+    <img class="pro_img" src="css/img/shahrukh-khan-house.jpg" alt="">
+
+    <ul>
+        <li>team : <span id="team2_name">AUS</span></li>
+        <li>ratio : 10</li>
+    </ul> 
+    <form action="/auth/bet" method="post">
+    <div class="btnbet">
+        <label for="betting2"></label> <input type="number" id="betting2">
+        <button class="bet" id="bet2" type="submit" onclick="add2()"> BET </button>
+    </div>
+    </form>
+    </div>
+    
+</div>
+
+<div class="score">
+      <h1>Your  Protfolio</h1>
+    <div class="view">
+      
+        <div id="com">
+
+        </div>
+           
+
+    </div>
+</div>
+
 
 </body>
+<script>
+
+function add(){
+            var Balance = {{  user.Balance}};
+    
+    if(betting1.value>99 ){
+        if(Balance>=betting1.value){
+          
+            const team1_name=document.getElementById('team1_name').innerText;
+            const t1=document.createElement('p');
+            const bt1 = document.createTextNode(`Your Team: ${team1_name}`);
+            
+            const betting1=document.getElementById('betting1');
+            const b1=document.createElement('p');
+            const bt2 = document.createTextNode(`Betting Amount: ${betting1.value}`);
+
+            const e1=document.createElement('p');
+            const et2 = document.createTextNode(`--------------------`);
+
+            t1.appendChild(bt1);
+            b1.appendChild(bt2);
+            e1.appendChild(et2);
+
+            document.getElementById('com').appendChild(t1);
+            document.getElementById('com').appendChild(b1);
+            document.getElementById('com').appendChild(e1);
+        }else{
+            alert('insubise amount')
+        }
+    }else{
+        alert('pls');
+    }
+
+
+}
+
+function add2(){
+    
+    if(betting2.value>=99){
+            const team1_name=document.getElementById('team1_name').innerText;
+            const t1=document.createElement('p');
+            const bt1 = document.createTextNode(`Your Team: ${team1_name}`);
+            
+            const betting1=document.getElementById('betting1');
+            const b1=document.createElement('p');
+            const bt2 = document.createTextNode(`Betting Amount: ${betting1.value}`);
+
+            const e1=document.createElement('p');
+            const et2 = document.createTextNode(`--------------------`);
+
+            t1.appendChild(bt1);
+            b1.appendChild(bt2);
+            e1.appendChild(et2);
+
+            document.getElementById('com').appendChild(t1);
+            document.getElementById('com').appendChild(b1);
+            document.getElementById('com').appendChild(e1);
+    }else{
+        alert('pls');
+    }
+
+
+}
+
+       /*
+            let betting1=document.getElementById('betting1');
+            const team1_name=document.getElementById('team1_name').innerText;
+            
+            $(document).ready(function(){
+            $("#bet1").click(function(){
+            $("#com").append(`<p>Your Team: ${team1_name}</p>.`,
+            `<p>Betting Amount: ${betting1.value}</p>`,
+            '<p>-------------------</p>');
+            });
+            });
+       
+       
+
+
+            let betting2=document.getElementById('betting2');
+            const team2_name=document.getElementById('team2_name').innerText;
+            
+            $(document).ready(function(){
+            $("#bet2").click(function(){
+            $("#com").append(`<p>Your Team: ${team2_name}</p>.`,
+            `<p>Betting Amount: ${betting2.value}</p>`,
+            '<p>-------------------</p>');
+            });
+            });
+    
+*/
+
+</script>
+
 </html>

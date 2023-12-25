@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longin2</title>
+    <link rel="shortcut icon" href="/css/img/icons8-home-94.png">
+    <link rel="stylesheet" href="/css/Login2.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">log in</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+        
+           <div class="social-icon">
+             <img src="css/img/facebook.png">
+             <img src="css/img/instagram.png">
+             <img src="css/img/facebook.png">
+             <img src="css/img/instagram.png">
+            </div>
+             {{#if msg}}
+            <p  class={{msg_type}} >{{[msg]}}</p>
+            {{/if}}
+            <form id="login" class="input-group" action="/auth/login" method="post">
+            
+                <input type="text" class="input-field" placeholder="User Id" name="Email"  required>
+                <input type="password" class="input-field" placeholder="Password" name="Password"required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Login</button>
+
+            </form>
+           
+            <form id="register" class="input-group" action="/auth/register" method="post">
+                <input type="text" class="input-field" placeholder="User Id" name="Name">
+                <input type="email" class="input-field" placeholder="Email Id" name="Email" >
+                <input type="password" class="input-field" placeholder="Password" name="Password">
+                <input type="password" class="input-field" placeholder="Conform_Password" name="Conform_Password" required>
+
+                <input type="checkbox" class="check-box"><span>I Agree</span>
+                <button class="submit-btn">Submit</button>
+
+            </form>
+       </div>
+    </div>
+    <script>
+      var x=document.getElementById("login");
+      var y=document.getElementById("register");
+      var z=document.getElementById("btn");
+      
+
+      function register(){
+        x.style.left="-400px";
+        y.style.left="60px";
+        z.style.left="50%";
+       
+
+      }
+      function login(){
+        x.style.left="60px";
+        y.style.left="400px";
+        z.style.left="0px";
+
+      }
+    </script>
+</body>
+</html>

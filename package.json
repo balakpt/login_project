@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodeman app.js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +19,8 @@
     "jsonwebtoken": "^9.0.2",
     "mysql": "^2.18.1",
     "nodeman": "^1.1.2"
+  },
+  "devDependencies": {
+    "prettier": "3.1.0"
   }
 }
